@@ -1,0 +1,45 @@
+instances:
+  brom:
+    initialization:
+#---paramters for grid--------------------------
+      water_layer_thickness: 6.5  # thickness of the water column, m (i.e. max depth from hydophysical model)
+      k_wat_bbl: 11               # number of k for water/BBL boundary  (i.e. from hydrophysical model)       
+      bbl_thickness: 0.5          # thickness of the BBL, m
+      dz_bbl_min: 0.02            # minimum resolution in the BBL near the SWI, m
+      dz_sed_min: 0.0005          # minimum resolution in the sediments near the SWI, m
+      dz_sed_max: 0.01            # maximum resolution in the sediments deeper, m
+      k_min: 1                    # minimum k number
+      k_points_below_water: 24    # total number of levels in the BBL and sediments
+      i_min: 1             # minimum i number
+      i_water: 2           # number of i for water column        
+      i_max: 2             # maximum i number
+#-----------------------------------------------
+      density: 1000.
+      wind_speed: 5.
+      pco2_atm: 370.
+      Io: 80.
+#-----------------------------------------------
+      bound_lowO2: 0.         # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)	
+      bound_upSO4: 22000.
+      bound_lowSO4: 9000.     # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)					
+      bound_upMn4: 10.E-4   
+      bound_upFe3: 1.E-4
+      bound_upALK: 2300.
+      bound_lowALK: 11500.    # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)	
+      bound_lowDIC: 12000.    # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)
+      bound_lowNH4: 900.      # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)	
+      bound_lowNO3: 0.
+      bound_lowPO4: 60.       # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)
+      bound_lowSi: 380.       # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)
+      bound_lowH2S: 1000.     # Boundary conditions for Berre at 15 cm in the sediments (Data_SiteP1.xls)
+#-----------------------------------------------
+      dt:        0.0025    # time step in [1/day]
+      freq_turb: 4         # vert.turb. / bhc frequency
+      freq_sed:  1         # sinking / bhc frequency
+      last_day:  365000    # maximum amount of days
+#-- site specific parameters -------------------
+      lat_light: 40.       # latitude for irradiance calculation   
+      kc:        0.03      # attenuation constant for the self shading effect
+      k_erlov:   0.05      # extinction coefficient
+      year:      2006      # year for ROMS output reading (between 1981 and 2012)
+# IMPORTANT !!!! _ <TAB> is NOT allowed here, used <Space> only !!!!
